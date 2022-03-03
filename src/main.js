@@ -6,6 +6,11 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
+import VueFluent from "vfluentdesign";
+import "vfluentdesign/lib/index.css";
+
+Vue.use(VueFluent);
+
 new Vue({
   router,
   store,

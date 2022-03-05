@@ -250,9 +250,15 @@ export default {
         }
       } else {
         this.state_lock = true;
-        let random_number = this.get_random(this.min, this.max);
+        let random_number = this.get_random(
+          parseInt(this.min),
+          parseInt(this.max)
+        );
         while (this.ban.findIndex((e) => e == random_number) != -1) {
-          random_number = this.get_random(this.min, this.max);
+          random_number = this.get_random(
+            parseInt(this.min),
+            parseInt(this.max)
+          );
         }
         for (let i = 0; i < this.digit_count; ++i) {
           let cur_digit = this.get_digit(random_number, 2 - i);

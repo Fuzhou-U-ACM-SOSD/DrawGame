@@ -5,13 +5,8 @@
     <fv-command-bar class="tool-bar" :options="options"> </fv-command-bar>
     <fv-web-window
       v-model="show"
-      theme="dark"
       title="设置"
-      style="
-        width: 380px;
-        height: 180px;
-        background-color: rgba(255, 125, 135, 0.9);
-      "
+      style="width: 380px; height: 180px"
     >
       <div class="window-box">
         <fv-text-box prefix="最小值" v-model="min" class="item"></fv-text-box>
@@ -31,7 +26,7 @@ export default {
   data() {
     return {
       min: "0",
-      max: "1000",
+      max: "99",
       show: false,
       options: [
         {
@@ -41,14 +36,6 @@ export default {
             this.show = true;
           },
         },
-        // {
-        //   name: "摇杆",
-        //   icon: "CircleFill",
-        // },
-        // {
-        //   name: "转盘",
-        //   icon: "CircleFill",
-        // },
       ],
     };
   },

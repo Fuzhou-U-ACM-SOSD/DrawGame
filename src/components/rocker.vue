@@ -333,7 +333,7 @@ export default {
 }
 .draw-box {
   position: absolute;
-  width: max(36vw, 60vh);
+  width: min(60vh,50vw);
   //   left: 32%;
   left: 50%;
   transform: translate(-50%, -50%);

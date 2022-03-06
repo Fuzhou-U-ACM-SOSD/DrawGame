@@ -2,7 +2,12 @@
   <div class="home">
     <div class="bg"></div>
     <rocker :min="min" :max="max"></rocker>
-    <fv-command-bar class="tool-bar" :options="options"> </fv-command-bar>
+    <fv-command-bar
+      background="rgba(0,0,0,0.01)"
+      class="tool-bar"
+      :options="options"
+    >
+    </fv-command-bar>
     <fv-web-window
       v-model="show"
       title="设置"
@@ -55,7 +60,7 @@ export default {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: url("~@/assets/res/mainbg.jpg");
+  background: url("~@/assets/res/11bg.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }

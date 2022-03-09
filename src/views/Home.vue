@@ -2,12 +2,13 @@
   <div class="home">
     <div class="bg"></div>
     <rocker :min="min" :max="max"></rocker>
-    <fv-command-bar
+    <!-- <fv-command-bar
       background="rgba(0,0,0,0.01)"
       class="tool-bar"
       :options="options"
     >
-    </fv-command-bar>
+    </fv-command-bar> -->
+    <img class="setting" src="@/assets/res/setting.png" @click="show = true" />
     <fv-web-window
       v-model="show"
       title="设置"
@@ -54,6 +55,18 @@ export default {
   height: 100vh;
   overflow: hidden;
   width: 100vw;
+}
+.setting {
+  z-index: 1;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 32px;
+  cursor: pointer;
+  &:hover {
+    transform: rotate(720deg) scale(0.72);
+    transition: all 1s;
+  }
 }
 .bg {
   z-index: -1;

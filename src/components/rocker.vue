@@ -53,6 +53,10 @@ export default {
       default: () => [],
       type: Array,
     },
+    repeat: {
+      default: false,
+      type: Boolean,
+    },
   },
   data() {
     return {
@@ -254,14 +258,18 @@ export default {
           parseInt(this.min),
           parseInt(this.max)
         );
-        while (this.ban.findIndex((e) => e == random_number) != -1) {
-          random_number = this.get_random(
-            parseInt(this.min),
-            parseInt(this.max)
-          );
+        if (!this.repeat) {
+          while (this.ban.findIndex((e) => e == random_number) != -1) {
+            random_number = this.get_random(
+              parseInt(this.min),
+              parseInt(this.max)
+            );
+          }
         }
+
         for (let i = 0; i < this.digit_count; ++i) {
           let cur_digit = this.get_digit(random_number, 2 - i);
+          console.log(cur_digit);
           await this.linear_change_value(
             this.speeds[i],
             this.speeds_config.step,
@@ -286,6 +294,8 @@ export default {
             );
           }
         }
+        // 提交历史
+        this.ban.push(random_number);
         this.state_lock = false;
       }
     },
